@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tag above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>OAC Embedding</title>
+    <script src="https://oacdemo-orasenatdpltintegration02.analytics.ocp.oraclecloud.com/dv/ui/api/v1/plugins/embedding/standalone/embedding.js" type="application/javascript">
+      <title>Oracle Analytics Cloud Embedding Sample</title>
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start`.
+      To create a production bundle, use `npm run build`.
+    -->
+    <h2>Test Dashboard</h2>
+    <div style="position:absolute; width: calc(100% - 40px); height: calc(100% - 120px); float: center;">
+      <oracle-dv project-path="/@Catalog/shared/VZ Cost Governance/UPDATED VZ_CostGovZ_Views" active-page="canvas" active-tab-id="1"></oracle-dv>
+    </div>
+    <script>
+      requirejs(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojcomposite', 'jet-composites/oracle-dv/loader'], function(ko) {
+        ko.applyBindings();
+      });
+    </script>
+    <br>
+  </body>
+</html>
